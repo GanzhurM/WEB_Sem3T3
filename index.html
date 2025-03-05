@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>METANIT.COM</title>
-<meta charset="utf-8">
-</head>
-<body>
-<h2>Введи свои данные:</h2>
-<form action="display.php" method="POST">
-<p>Введите имя: <input type="text" name="firstname" /></p>
-<p>Введите фамилию: <input type="text" name="lastname" /></p>
-<input type="submit" value="Отправить">
-</form>
-</body>
-</html>
+<div class = "boxes">
+  <input type="text" id="kye" placeholder = "А я буду работать?"/>
+  <p id="ans"> </p>
+  <button onclick = "GetAnswer()"> Нажми меня </button>
+</div>
+
+<script>
+  function GetAnswer() {
+    let question = document.getElementbyId("kye").value.trim().toLowerCase();
+    let response = "Вы ничего не ввели в окошко";
+    const answers = {
+      "Да?" : "Нет"
+    };
+    if (answers[question]) {
+      response = answers[question];
+    };
+    document.getElementById("ans").textContent = response;
+  };
+</script>
